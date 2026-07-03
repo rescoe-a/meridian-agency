@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投稿 · 经纬报社</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <header class="site-header">
+    <div class="header-overline">独立调查媒体 · 创刊于 1924</div>
+    <h1 class="site-title">经纬报社</h1>
+    <div class="site-title-en">Meridian Agency</div>
+    <div class="header-divider"></div>
+    <p class="header-motto">记录真实<span class="sep">·</span>守护边界</p>
+  </header>
+
+  <nav class="site-nav">
+    <ul class="nav-inner">
+      <li><a href="../index.html">首页</a></li>
+      <li class="nav-sep">·</li>
+      <li><a href="../articles/">专栏</a></li>
+      <li class="nav-sep">·</li>
+      <li><a href="../archives/">档案</a></li>
+      <li class="nav-sep">·</li>
+      <li><a href="../about/">关于</a></li>
+      <li class="nav-sep">·</li>
+      <li><a href="index.html" class="active">投稿</a></li>
+      <li class="nav-sep">·</li>
+      <li><a href="../contact/">联系</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-grid">
+    <main class="content-area">
+
+      <h2 class="section-header">投稿 · 线索提供</h2>
+
+      <div class="submission-intro">
+        <p><strong>经纬报社欢迎各界人士投稿与提供线索。</strong>我们的报道领域涵盖冷门地理、地方民俗、民间知识体系、未解自然现象及深度调查。无论您是专业研究者、一线工作者、旅行者，还是仅仅知晓一段值得被记录的故事——我们都期待您的来信。</p>
+        <p style="margin-top:8px;">您的投稿将在 <strong>7-14 个工作日</strong> 内获得初审反馈。如稿件或线索通过审核，我们的编辑将与您联系，商讨后续采编事宜。所有来稿均受本社保密条款保护，未经投稿人明确同意，本社不会对外披露投稿人信息。</p>
+      </div>
+
+      <form class="submission-form" id="submission-form" novalidate>
+
+        <div class="form-group">
+          <label for="submitter-name">姓名 <span class="required">*</span></label>
+          <input type="text" id="submitter-name" placeholder="您的真实姓名或常用笔名" required>
+        </div>
+
+        <div class="form-group">
+          <label for="submitter-email">电子邮箱 <span class="required">*</span></label>
+          <input type="email" id="submitter-email" placeholder="editor@example.com" required>
+          <span class="form-hint">我们只会将邮箱用于投稿反馈，不会用于任何其他目的。</span>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-category">投稿类别</label>
+          <select id="submission-category">
+            <option value="">—— 请选择最接近的类别 ——</option>
+            <option value="geography">地理发现 · 边缘地貌、未测绘区域、地理异常</option>
+            <option value="folklore">民俗考 · 地方习俗、口述传统、仪式调查</option>
+            <option value="investigation">深度调查 · 需要长期追踪的复杂事件</option>
+            <option value="anomaly">自然异象 · 无法用常规理论解释的自然现象</option>
+            <option value="archaeology">考古发现 · 未被官方记录的遗址、文物或铭文</option>
+            <option value="intelligence">其他线索 · 不便归类但您认为值得调查的信息</option>
+          </select>
+          <span class="form-hint">如无法确定类别，可选择"其他线索"，编辑会协助归类。</span>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-title">投稿标题</label>
+          <input type="text" id="submission-title" placeholder="简明扼要地概括您要提供的内容">
+        </div>
+
+        <div class="form-group">
+          <label for="submission-location">涉及地点</label>
+          <input type="text" id="submission-location" placeholder="具体地点或大致区域（例如：云南省普洱市无量山余脉）">
+          <span class="form-hint">地点信息越精确越好——经纬度坐标尤为欢迎。</span>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-content">投稿内容 / 线索描述 <span class="required">*</span></label>
+          <textarea id="submission-content" placeholder="请尽可能详细地描述您的见闻、发现或线索。包括但不限于：发生的时间与地点、涉及的人物或事件、您认为值得关注的细节、相关的背景信息。如果内容超过两千字，建议先提交摘要，编辑将与您联系获取全文。" required></textarea>
+          <span class="form-hint">您可以在此处粘贴文字，或概述大致内容——编辑会在后续沟通中与您确认细节。</span>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-attachment">附加材料说明</label>
+          <input type="text" id="submission-attachment" placeholder="如有照片、录音、视频或文档等材料，请在此简要说明">
+          <span class="form-hint">如需提交较大的附件，请在投稿内容中说明，编辑将通过邮件与您联系获取。</span>
+        </div>
+
+        <button type="submit" class="form-submit">提交投稿</button>
+
+        <div class="form-feedback" id="form-feedback"></div>
+
+      </form>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h4>投稿须知</h4>
+        <ul>
+          <li><strong>内容真实：</strong>请确保投稿内容基于亲身经历或可靠来源。</li>
+          <li><strong>保护信源：</strong>如希望匿名，请在投稿中注明。本社严格保护投稿人隐私。</li>
+          <li><strong>版权说明：</strong>投稿内容如被采纳发表，版权事宜将与投稿人另行协商。</li>
+          <li><strong>反馈周期：</strong>初审反馈通常为 7-14 个工作日。若未收到回复，请检查垃圾邮件箱或重新提交。</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>优先关注的线索类型</h4>
+        <ul>
+          <li>地图上未标注或标注有误的地点</li>
+          <li>地方志中无记载的民间仪式与禁忌</li>
+          <li>反复出现的、尚无合理解释的自然现象</li>
+          <li>地方政府的非公开调查报告</li>
+          <li>老地图、老照片与当前地貌的显著差异</li>
+          <li>不明来源的器物、铭文或建筑遗迹</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-cta mt-3">
+        <h4>🔍 需要更安全的沟通方式？</h4>
+        <p>如您提供的线索性质特殊，不便通过常规邮件沟通，请在投稿正文中注明"安全通讯需求"，编辑将提供替代方案。</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-motto">"每一条线索都是地图上的一个坐标——它们共同勾勒出我们所知的世界的边界。"</p>
+      <ul class="footer-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../articles/">专栏</a></li>
+        <li><a href="../archives/">档案</a></li>
+        <li><a href="../about/">关于</a></li>
+        <li><a href="index.html">投稿</a></li>
+        <li><a href="../contact/">联系</a></li>
+      </ul>
+      <p class="footer-copy">
+        © 1924–<span id="current-year">2026</span> 经纬报社 · Meridian Agency · 保留所有权利
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
