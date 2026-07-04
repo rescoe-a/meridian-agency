@@ -121,10 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.innerHTML =
       '<div class="login-modal">' +
         '<button type="button" class="login-modal-close" id="login-modal-close">&times;</button>' +
-        '<div class="login-modal-title">内部系统</div>' +
+        '<div class="login-modal-title">账号登录</div>' +
         '<div class="form-group">' +
           '<label for="login-id">ID</label>' +
-          '<input type="text" id="login-id" placeholder="请输入职员编号">' +
+          '<input type="text" id="login-id" placeholder="请输入您的ID号">' +
         '</div>' +
         '<div class="form-group">' +
           '<label for="login-password">密码</label>' +
