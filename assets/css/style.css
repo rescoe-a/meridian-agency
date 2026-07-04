@@ -61,6 +61,146 @@
 }
 
 /* ============================================================
+   Dark Theme — 内部系统 (body.theme-dark)
+   灰黑底色 + 低饱和红棕文字 — 暗室/机密档案柜氛围
+   ============================================================ */
+body.theme-dark {
+  /* —— 背景：从"纸"反转为"暗室" —— */
+  --paper:       #1a1b1a;
+  --paper-warm:  #0d0e0d;
+  --paper-dark:  #222322;
+
+  /* —— 文字：低饱和红棕色系 —— */
+  --ink-deep:    #c05555;
+  --ink:         #b86060;
+  --ink-light:   #9a6a6a;
+  --ink-muted:   #7a6060;
+
+  /* —— 档案区 —— */
+  --archive:     #1a1215;
+  --archive-dark:#2a1820;
+  --archive-border:#3a2028;
+
+  /* —— 边框 —— */
+  --border:      #333433;
+  --border-light:#282928;
+  --border-ink:  #504545;
+
+  /* —— 点缀色 —— */
+  --seal-red:    #c04040;
+  --seal-red-dark:#d05550;
+  --ink-blue:    #6a7a8a;
+  --ink-blue-dark:#5a6878;
+
+  /* —— 新闻纸灰 —— */
+  --newsprint:   #1e1e1e;
+  --newsprint-dark:#252525;
+
+  /* 暗室纹理（替代纸纤维纹理） */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(60, 40, 40, 0.025) 3px,
+      rgba(60, 40, 40, 0.025) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 100px,
+      rgba(60, 40, 40, 0.012) 100px,
+      rgba(60, 40, 40, 0.012) 101px
+    );
+  background-color: var(--paper-warm);
+}
+
+/* —— 暗色主题：硬编码颜色覆盖 —— */
+body.theme-dark a:visited {
+  color: #9a7070;
+}
+body.theme-dark .page-wrapper {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+}
+body.theme-dark .ref-status.open {
+  color: #6a8a6a;
+}
+body.theme-dark .form-feedback.success {
+  background: #1a2a1a;
+  border-color: #2a4a2a;
+  color: #7a9a7a;
+}
+body.theme-dark .form-feedback.error {
+  background: #2a1a1a;
+  border-color: #4a2a2a;
+  color: #b87070;
+}
+body.theme-dark .tag.geography   { border-color: #4a5a4a; color: #7a9a7a; }
+body.theme-dark .tag.folklore    { border-color: #5a4a3a; color: #9a8060; }
+body.theme-dark .tag.investigation { border-color: #5a4040; color: #b87070; }
+body.theme-dark .tag.archival    { border-color: #5a503a; color: #9a9060; }
+body.theme-dark .login-modal .login-feedback.error {
+  background: #2a1a1a;
+  border-color: #4a2a2a;
+  color: #b87070;
+}
+body.theme-dark .login-modal .login-feedback.info {
+  background: #1a1a2a;
+  border-color: #2a2a4a;
+  color: #7a7aaa;
+}
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+  background: var(--paper-dark);
+  color: var(--ink);
+  border-color: var(--border);
+}
+body.theme-dark .archive-table th {
+  background: var(--paper-dark);
+  color: var(--ink-muted);
+}
+body.theme-dark .archive-table tbody tr:nth-child(even) {
+  background: rgba(60,40,40,0.08);
+}
+body.theme-dark .header-login-link {
+  color: var(--ink-muted);
+}
+body.theme-dark .header-login-link:hover {
+  color: var(--seal-red);
+}
+body.theme-dark .header-divider {
+  opacity: 0.3;
+}
+body.theme-dark .sidebar-cta {
+  background: var(--paper-dark);
+  border-color: var(--border);
+}
+body.theme-dark .site-nav {
+  border-top-color: var(--border);
+  border-bottom-color: var(--border);
+}
+body.theme-dark .site-footer {
+  border-top-color: var(--border);
+}
+body.theme-dark .rule-thin,
+body.theme-dark .rule-double,
+body.theme-dark hr {
+  border-color: var(--border);
+}
+body.theme-dark .office-card {
+  background: var(--paper-dark);
+  border-color: var(--border);
+}
+body.theme-dark .org-card {
+  background: var(--paper-dark);
+  border-color: var(--border);
+}
+body.theme-dark .nav-inner a:hover {
+  color: var(--seal-red);
+}
+
+/* ============================================================
    Reset & Base
    ============================================================ */
 *, *::before, *::after {
@@ -1369,6 +1509,19 @@ a:visited {
   background: var(--archive);
   border: 1px solid var(--archive-border);
   color: var(--ink-light);
+}
+.login-modal .login-feedback.success {
+  display: block;
+  background: #e8ede2;
+  border: 1px solid #b4c4a8;
+  color: #4a5a3a;
+}
+
+/* 暗色主题下登录成功反馈 */
+body.theme-dark .login-modal .login-feedback.success {
+  background: #1a2a1a;
+  border-color: #2a4a2a;
+  color: #7a9a7a;
 }
 
 /* 登录弹窗响应式 */

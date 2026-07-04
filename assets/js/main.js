@@ -200,10 +200,30 @@ document.addEventListener('DOMContentLoaded', function () {
         loginSubmit.textContent = '请稍候';
 
         setTimeout(function () {
-          loginFb.className = 'login-feedback error';
-          loginFb.textContent = '访问被拒绝 —— 凭证无效。';
-          loginSubmit.disabled = false;
-          loginSubmit.textContent = '验证';
+          // 验证凭证
+          if (id === '579462073' && pw === 'CAM7H6G1TH') {
+            // 验证成功
+            loginFb.className = 'login-feedback success';
+            loginFb.textContent = '验证成功——凭证有效。';
+            loginSubmit.disabled = true;
+            loginSubmit.textContent = '进入中';
+            sessionStorage.setItem('meridian_auth', '1');
+            sessionStorage.setItem('meridian_user', id);
+            // 计算 internal/ 的相对路径
+            var segs = window.location.pathname.split('/').filter(function(s) {
+              return s && s.indexOf('.') === -1;
+            });
+            var internalPath = segs.length <= 1 ? 'internal/' : '../internal/';
+            setTimeout(function () {
+              window.location.href = internalPath;
+            }, 1000);
+          } else {
+            // 验证失败
+            loginFb.className = 'login-feedback error';
+            loginFb.textContent = '访问被拒绝 —— 凭证无效。';
+            loginSubmit.disabled = false;
+            loginSubmit.textContent = '验证';
+          }
         }, 1500);
       });
 
