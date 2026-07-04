@@ -110,4 +110,115 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ============================================================
+     登录弹窗 —— 内部系统入口
+     ============================================================ */
+  (function initLoginModal() {
+    // 动态创建弹窗 HTML
+    var overlay = document.createElement('div');
+    overlay.className = 'login-overlay';
+    overlay.id = 'login-overlay';
+    overlay.innerHTML =
+      '<div class="login-modal">' +
+        '<button type="button" class="login-modal-close" id="login-modal-close">&times;</button>' +
+        '<div class="login-modal-title">内部系统</div>' +
+        '<div class="form-group">' +
+          '<label for="login-id">ID</label>' +
+          '<input type="text" id="login-id" placeholder="请输入职员编号">' +
+        '</div>' +
+        '<div class="form-group">' +
+          '<label for="login-password">密码</label>' +
+          '<input type="password" id="login-password" placeholder="请输入密码">' +
+        '</div>' +
+        '<button type="button" class="login-submit" id="login-submit-btn">验证</button>' +
+        '<div class="login-feedback" id="login-feedback"></div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var loginTrigger = document.getElementById('login-trigger');
+    var loginOverlay = document.getElementById('login-overlay');
+    var loginClose   = document.getElementById('login-modal-close');
+    var loginSubmit  = document.getElementById('login-submit-btn');
+    var loginId      = document.getElementById('login-id');
+    var loginPw      = document.getElementById('login-password');
+    var loginFb      = document.getElementById('login-feedback');
+
+    // 打开弹窗
+    if (loginTrigger) {
+      loginTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        loginOverlay.classList.add('active');
+        // 重置状态
+        loginFb.className = 'login-feedback';
+        loginFb.textContent = '';
+        loginId.value = '';
+        loginPw.value = '';
+        // 自动聚焦到 ID 输入框
+        setTimeout(function () { loginId.focus(); }, 150);
+      });
+    }
+
+    // 关闭弹窗
+    function closeModal() {
+      loginOverlay.classList.remove('active');
+    }
+
+    if (loginClose) {
+      loginClose.addEventListener('click', closeModal);
+    }
+
+    loginOverlay.addEventListener('click', function (e) {
+      if (e.target === loginOverlay) {
+        closeModal();
+      }
+    });
+
+    // ESC 关闭
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && loginOverlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // 提交验证
+    if (loginSubmit) {
+      loginSubmit.addEventListener('click', function () {
+        var id  = loginId.value.trim();
+        var pw  = loginPw.value.trim();
+
+        // 空值校验
+        if (!id || !pw) {
+          loginFb.className = 'login-feedback error';
+          loginFb.textContent = '请输入 ID 和密码。';
+          return;
+        }
+
+        // 模拟验证
+        loginFb.className = 'login-feedback info';
+        loginFb.textContent = '验证中……';
+        loginSubmit.disabled = true;
+        loginSubmit.textContent = '请稍候';
+
+        setTimeout(function () {
+          loginFb.className = 'login-feedback error';
+          loginFb.textContent = '访问被拒绝 —— 凭证无效。';
+          loginSubmit.disabled = false;
+          loginSubmit.textContent = '验证';
+        }, 1500);
+      });
+
+      // 回车提交
+      loginPw.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          loginSubmit.click();
+        }
+      });
+      loginId.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          loginPw.focus();
+        }
+      });
+    }
+  })();
+
 });
