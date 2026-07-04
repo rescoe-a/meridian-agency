@@ -1,15 +1,18 @@
-# System files
-.DS_Store
-Thumbs.db
+# Windows 系统文件
 desktop.ini
+Thumbs.db
+*.lnk
 
-# Editor files
+# macOS
+.DS_Store
+
+# 草稿/临时文件
+新建*.txt
+点击输入文字.txt
+
+# 编辑器
+.vscode/
+.idea/
 *.swp
 *.swo
 *~
-.vscode/
-.idea/
-
-# Temp files
-*.tmp
-*.log
