@@ -43,6 +43,7 @@
         <p style="margin:0; font-size:0.85rem; color:var(--ink-muted);">
           安全等级<span id="internal-clearance">Ⅳ</span> · <span id="internal-role">高级调查记者</span> · 上次登录：<span id="last-login-time">--</span>
         </p>
+        <p style="margin:4px 0 0 0; font-size:0.75rem; color:var(--ink-muted);" id="geo-location">正在获取位置…</p>
       </div>
 
       <!-- 系统状态 -->
@@ -212,6 +213,33 @@
                          String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
   }
 })();
+
+  // 实时经纬度显示
+  (function() {
+    var geoEl = document.getElementById('geo-location');
+    if (!geoEl) return;
+
+    if (!navigator.geolocation) {
+      geoEl.textContent = '位置不可用';
+      return;
+    }
+
+    function formatCoord(lat, lng) {
+      var latDir = lat >= 0 ? '北纬' : '南纬';
+      var lngDir = lng >= 0 ? '东经' : '西经';
+      return latDir + ' ' + Math.abs(lat).toFixed(4) + '° / ' + lngDir + ' ' + Math.abs(lng).toFixed(4) + '°';
+    }
+
+    navigator.geolocation.watchPosition(
+      function(pos) {
+        geoEl.textContent = formatCoord(pos.coords.latitude, pos.coords.longitude);
+      },
+      function() {
+        geoEl.textContent = '位置不可用';
+      },
+      { enableHighAccuracy: true }
+    );
+  })();
 </script>
 </body>
 </html>
