@@ -201,6 +201,180 @@ body.theme-dark .nav-inner a:hover {
 }
 
 /* ============================================================
+   Submission Workbench —— 内部处理投稿工作台
+   ============================================================ */
+.submission-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+}
+
+.submission-tab {
+  display: block;
+  padding: 10px 22px;
+  font-family: var(--font-cn);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.submission-tab:hover {
+  color: var(--ink-light);
+}
+
+.submission-tab.active {
+  color: var(--seal-red);
+  border-bottom-color: var(--seal-red);
+}
+
+.submission-panel {
+  display: none;
+}
+
+.submission-panel.active {
+  display: block;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+.submission-table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--ink);
+  text-transform: uppercase;
+}
+
+.submission-table tbody td {
+  padding: 12px 8px;
+  border-bottom: 1px dotted var(--border-light);
+  vertical-align: top;
+}
+
+.submission-table .sub-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.submission-table .sub-title {
+  font-weight: 600;
+}
+
+.submission-table .sub-title a {
+  color: var(--ink);
+  border-bottom: none;
+}
+
+.submission-table .sub-title a:hover {
+  color: var(--seal-red);
+}
+
+.submission-table .sub-meta {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.status-badge.pending {
+  border: 1px solid #c08040;
+  color: #c08040;
+}
+
+.status-badge.published {
+  border: 1px solid #6a8a6a;
+  color: #6a8a6a;
+}
+
+.status-badge.needs-info {
+  border: 1px solid #8a6a6a;
+  color: #8a6a6a;
+}
+
+body.theme-dark .status-badge.pending {
+  border-color: #b87040;
+  color: #b87040;
+}
+
+body.theme-dark .status-badge.published {
+  border-color: #5a8a5a;
+  color: #5a8a5a;
+}
+
+body.theme-dark .status-badge.needs-info {
+  border-color: #8a6060;
+  color: #8a6060;
+}
+
+.tone-tag {
+  display: inline-block;
+  font-family: var(--font-cn);
+  font-size: 0.68rem;
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.review-btn {
+  font-family: var(--font-cn);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.review-btn:hover {
+  background: var(--ink-light);
+}
+
+body.theme-dark .review-btn {
+  background: var(--seal-red);
+  color: var(--paper);
+}
+
+body.theme-dark .review-btn:hover {
+  background: var(--seal-red-dark);
+}
+
+body.theme-dark .submission-table thead th {
+  color: var(--ink-muted);
+}
+
+/* ============================================================
    Reset & Base
    ============================================================ */
 *, *::before, *::after {

@@ -209,6 +209,10 @@ document.addEventListener('DOMContentLoaded', function () {
             loginSubmit.textContent = '进入中';
             sessionStorage.setItem('meridian_auth', '1');
             sessionStorage.setItem('meridian_user', id);
+            sessionStorage.setItem('meridian_name', 'Cameron Ashford');
+            sessionStorage.setItem('meridian_clearance', 'Ⅳ');
+            sessionStorage.setItem('meridian_role', '高级调查记者');
+            sessionStorage.setItem('meridian_login_time', new Date().toISOString());
             // 计算 internal/ 的相对路径
             var segs = window.location.pathname.split('/').filter(function(s) {
               return s && s.indexOf('.') === -1;

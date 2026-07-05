@@ -39,8 +39,10 @@
 
       <!-- 欢迎区 -->
       <div class="internal-welcome" style="border:1px solid var(--border); padding:20px 24px; margin-bottom:24px; background:var(--paper-dark);">
-        <h2 style="margin:0 0 6px 0; font-size:1.2rem;">欢迎回来，<span id="internal-user-id">通讯员</span></h2>
-        <p style="margin:0; font-size:0.85rem; color:var(--ink-muted);">安全等级 Ⅲ · 区域协调员 · 上次登录：今日</p>
+        <h2 style="margin:0 0 6px 0; font-size:1.3rem;">欢迎回来，<span id="internal-user-name">Cameron Ashford</span></h2>
+        <p style="margin:0; font-size:0.85rem; color:var(--ink-muted);">
+          安全等级<span id="internal-clearance">Ⅳ</span> · <span id="internal-role">高级调查记者</span> · 上次登录：<span id="last-login-time">--</span>
+        </p>
       </div>
 
       <!-- 系统状态 -->
@@ -53,10 +55,6 @@
         <div class="status-card" style="border:1px solid var(--border); padding:12px 14px; font-size:0.85rem;">
           <span style="color:#6a8a6a;">●</span> 通讯网络：正常<br>
           <span style="font-size:0.75rem; color:var(--ink-muted);">三大总社在线</span>
-        </div>
-        <div class="status-card" style="border:1px solid var(--border); padding:12px 14px; font-size:0.85rem;">
-          <span style="color:#c08040;">●</span> 外勤人员：3人执勤中<br>
-          <span style="font-size:0.75rem; color:var(--ink-muted);">2人待命 · 1人失联</span>
         </div>
         <div class="status-card" style="border:1px solid var(--border); padding:12px 14px; font-size:0.85rem;">
           <span style="color:#c08040;">●</span> 安全协议：已激活<br>
@@ -179,12 +177,39 @@
 
 <script src="../assets/js/main.js"></script>
 <script>
-// 显示登录用户 ID
+// 显示登录用户信息
 (function() {
-  var userId = sessionStorage.getItem('meridian_user');
-  var el = document.getElementById('internal-user-id');
-  if (userId && el) {
-    el.textContent = '职员 ' + userId;
+  var userName = sessionStorage.getItem('meridian_name');
+  var clearance = sessionStorage.getItem('meridian_clearance');
+  var role = sessionStorage.getItem('meridian_role');
+  var loginTime = sessionStorage.getItem('meridian_login_time');
+
+  var nameEl = document.getElementById('internal-user-name');
+  if (userName && nameEl) {
+    nameEl.textContent = userName;
+  }
+
+  var clearanceEl = document.getElementById('internal-clearance');
+  if (clearance && clearanceEl) {
+    clearanceEl.textContent = clearance;
+  }
+
+  var roleEl = document.getElementById('internal-role');
+  if (role && roleEl) {
+    roleEl.textContent = role;
+  }
+
+  var timeEl = document.getElementById('last-login-time');
+  if (loginTime && timeEl) {
+    var d = new Date(loginTime);
+    var formatted = d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日 ' +
+                    String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    timeEl.textContent = formatted;
+  } else if (timeEl) {
+    // fallback: 显示当前时间
+    var now = new Date();
+    timeEl.textContent = now.getFullYear() + '年' + (now.getMonth() + 1) + '月' + now.getDate() + '日 ' +
+                         String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
   }
 })();
 </script>
