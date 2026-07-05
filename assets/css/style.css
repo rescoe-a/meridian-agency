@@ -1803,3 +1803,26 @@ body.theme-dark .footer-links a {
 body.theme-dark .footer-links a:hover {
   color: #33FF33;
 }
+
+/* ==============================================
+   权限提示 Toast
+   ============================================== */
+.permission-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 10px 24px;
+  background: #000000;
+  color: #00CC00;
+  border: 1px solid #006600;
+  font-family: 'Courier New', '宋体', monospace;
+  font-size: 0.9rem;
+  opacity: 1;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.permission-toast.fade-out {
+  opacity: 0;
+}

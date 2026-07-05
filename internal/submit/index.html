@@ -251,6 +251,30 @@
     });
   });
 })();
+
+  // 审核按钮权限提示
+  (function() {
+    var buttons = document.querySelectorAll('.review-btn');
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // 移除已有的 toast（防止堆积）
+        var existing = document.querySelector('.permission-toast');
+        if (existing) existing.parentNode.removeChild(existing);
+
+        var toast = document.createElement('div');
+        toast.className = 'permission-toast';
+        toast.textContent = '您没有编辑部相关权限，无法进行审核。';
+        document.body.appendChild(toast);
+
+        setTimeout(function() {
+          toast.classList.add('fade-out');
+          toast.addEventListener('transitionend', function() {
+            if (toast.parentNode) toast.parentNode.removeChild(toast);
+          });
+        }, 1200);
+      });
+    });
+  })();
 </script>
 </body>
 </html>
