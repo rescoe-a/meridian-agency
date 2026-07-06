@@ -1,59 +1,53 @@
 /* ============================================================
    经纬报社 · MERIDIAN AGENCY — Main Stylesheet
-   Windows XP Luna — 经典蓝绿 · 3D 凹凸边框 · Tahoma 字体
+   纸媒灰 · 档案黄 · 深墨色 — 拒绝荧光高饱和与科技感
    ============================================================ */
 
-/* === Fonts: XP-era system fonts, no web fonts === */
+/* === Fonts: 2000-era system fonts only, no web fonts === */
 
 /* ============================================================
    CSS Custom Properties
    ============================================================ */
 :root {
-  /* —— Windows XP Luna palette —— */
+  /* —— 2000-era news website palette —— */
   --ink-deep:    #000000;   /* 标题纯黑 */
-  --ink:         #1A1A1A;   /* 正文 */
-  --ink-light:   #333333;   /* 辅助文字 */
-  --ink-muted:   #666666;   /* 元数据 */
+  --ink:         #333333;   /* 正文 */
+  --ink-light:   #555555;   /* 辅助文字 */
+  --ink-muted:   #777777;   /* 元数据 */
 
   /* —— 背景 —— */
   --paper:       #FFFFFF;   /* 纯白内容区 */
-  --paper-warm:  #ECE9D8;   /* XP 对话框米灰 */
-  --paper-dark:  #D4D0C8;   /* XP 经典灰色面板 */
+  --paper-warm:  #FFFFFF;   /* 页面底色 */
+  --paper-dark:  #F0F0F0;   /* 卡片/区域背景 */
 
   /* —— 高亮区 —— */
-  --archive:     #E5F0FF;   /* XP 浅蓝高亮 */
-  --archive-dark:#D0E0F0;
-  --archive-border:#A0B8D0;
+  --archive:     #FFFFCC;   /* 经典浅黄高亮 */
+  --archive-dark:#E8E8D0;
+  --archive-border:#CCCC99;
 
   /* —— 灰色系列 —— */
-  --newsprint:   #D4D0C8;
-  --newsprint-dark:#C0C0C0;
+  --newsprint:   #E8E8E8;
+  --newsprint-dark:#D8D8D8;
 
   /* —— 边框 —— */
-  --border:      #7F9DB9;   /* XP 蓝灰边框 */
-  --border-light:#B0C4DE;
-  --border-ink:  #5A7A9A;
+  --border:      #999999;
+  --border-light:#CCCCCC;
+  --border-ink:  #666666;
 
   /* —— 点缀色 —— */
-  --seal-red:    #0054E3;   /* XP 标题栏蓝 */
-  --seal-red-dark:#003BB3;
-  --ink-blue:    #0033CC;   /* XP 链接蓝 */
-  --ink-blue-dark:#001F7F;
-
-  /* —— XP 专属色 —— */
-  --xp-blue:        #0054E3;
-  --xp-blue-light:  #3399FF;
-  --xp-green:       #3C8C00;
-  --xp-bg:          #ECE9D8;
+  --seal-red:    #CC0000;   /* 红色强调 */
+  --seal-red-dark:#990000;
+  --ink-blue:    #0000CC;   /* 链接蓝 */
+  --ink-blue-dark:#000099;
 
   /* —— 布局（窄版，2000年代典型） —— */
   --max-width:   760px;
   --gutter:      16px;
   --sidebar-w:   200px;
 
-  /* —— XP 系统字体（Tahoma 为核心） —— */
-  --font-cn:     Tahoma, '宋体', 'SimSun', sans-serif;
-  --font-en:     Tahoma, Verdana, sans-serif;
+  /* —— 系统字体（无Google Fonts） —— */
+  --font-cn:     'Times New Roman', '宋体', 'SimSun', serif;
+  --font-en:     'Times New Roman', 'Georgia', serif;
   --font-mono:   'Courier New', '宋体', 'SimSun', monospace;
 
   --fs-base:     14px;
@@ -66,136 +60,136 @@
 }
 
 /* ============================================================
-   Dark Theme — XP 暗色模式 (body.theme-dark)
-   深蓝灰底 · 亮灰文字 · 保留 XP 3D 控件风格
+   Dark Theme — 内部安全终端 (body.theme-dark)
+   黑底绿字 CRT 终端美学
    ============================================================ */
 body.theme-dark {
-  /* —— 深色背景 —— */
-  --paper:       #1E1E1E;
-  --paper-warm:  #252526;
-  --paper-dark:  #2D2D2D;
+  /* —— 纯黑背景 —— */
+  --paper:       #000000;
+  --paper-warm:  #000000;
+  --paper-dark:  #0A0A0A;
 
-  /* —— 亮灰文字 —— */
-  --ink-deep:    #F0F0F0;
-  --ink:         #D0D0D0;
-  --ink-light:   #B0B0B0;
-  --ink-muted:   #808080;
+  /* —— 终端绿文字 —— */
+  --ink-deep:    #33FF33;
+  --ink:         #00CC00;
+  --ink-light:   #00AA00;
+  --ink-muted:   #008800;
 
   /* —— 高亮区 —— */
-  --archive:     #1A2535;
-  --archive-dark:#1F2D40;
-  --archive-border:#3A5070;
+  --archive:     #0A1A0A;
+  --archive-dark:#0D220D;
+  --archive-border:#004400;
 
   /* —— 边框 —— */
-  --border:      #505050;
-  --border-light:#3A3A3A;
-  --border-ink:  #707070;
+  --border:      #006600;
+  --border-light:#004400;
+  --border-ink:  #008800;
 
   /* —— 点缀色 —— */
-  --seal-red:    #4DA6FF;
-  --seal-red-dark:#3399FF;
-  --ink-blue:    #6BB5FF;
-  --ink-blue-dark:#4DA6FF;
+  --seal-red:    #00FF00;
+  --seal-red-dark:#00CC00;
+  --ink-blue:    #00FF00;
+  --ink-blue-dark:#00CC00;
 
   /* —— 灰色 —— */
-  --newsprint:   #333333;
-  --newsprint-dark:#2A2A2A;
+  --newsprint:   #0A0A0A;
+  --newsprint-dark:#0F0F0F;
 
-  /* 暗色背景 */
+  /* 无背景纹理 */
   background-image: none;
-  background-color: #1A1A1A;
+  background-color: #000000;
 }
 
-/* —— 暗色主题：XP 暗色覆盖 —— */
+/* —— 暗色主题：终端风格覆盖 —— */
 body.theme-dark a:visited {
-  color: #8AB4F8;
+  color: #00AA00;
 }
 body.theme-dark .page-wrapper {
-  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  box-shadow: none;
 }
 body.theme-dark .ref-status.open {
-  color: #80C080;
+  color: #00FF00;
 }
 body.theme-dark .ref-status.restricted {
-  color: #FF6666;
+  color: #33FF33;
 }
 body.theme-dark .form-feedback.success {
-  background: #1A2A1A;
-  border-color: #3A5A3A;
-  color: #80C080;
+  background: #0A1A0A;
+  border-color: #006600;
+  color: #00CC00;
 }
 body.theme-dark .form-feedback.error {
-  background: #2A1A1A;
-  border-color: #5A3A3A;
-  color: #FF6666;
+  background: #1A0A0A;
+  border-color: #660000;
+  color: #FF3333;
 }
 body.theme-dark .tag.geography,
 body.theme-dark .tag.folklore,
 body.theme-dark .tag.investigation,
 body.theme-dark .tag.archival {
-  border-color: #505050;
-  color: #B0B0B0;
+  border-color: #006600;
+  color: #00CC00;
 }
 body.theme-dark .login-modal .login-feedback.error {
-  background: #2A1A1A;
-  border-color: #5A3A3A;
-  color: #FF6666;
+  background: #1A0A0A;
+  border-color: #660000;
+  color: #FF3333;
 }
 body.theme-dark .login-modal .login-feedback.info {
-  background: #1A1A2A;
-  border-color: #3A3A50;
-  color: #8AB4F8;
+  background: #0A0A1A;
+  border-color: #004400;
+  color: #00AA00;
 }
 body.theme-dark input,
 body.theme-dark textarea,
 body.theme-dark select {
-  background: #2D2D2D;
-  color: #E0E0E0;
-  border: 2px inset #555555;
+  background: #000000;
+  color: #00FF00;
+  border: 2px inset #006600;
 }
 body.theme-dark .archive-table th {
-  background: #2D2D2D;
-  color: #E0E0E0;
+  background: #0A0A0A;
+  color: #00FF00;
 }
 body.theme-dark .archive-table tbody tr:nth-child(even) {
-  background: #252525;
+  background: #050505;
 }
 body.theme-dark .header-login-link {
-  color: #8AB4F8;
+  color: #00CC00;
 }
 body.theme-dark .header-login-link:hover {
-  color: #AAD0FF;
+  color: #33FF33;
 }
 body.theme-dark .header-divider {
   opacity: 0.4;
 }
 body.theme-dark .sidebar-cta {
-  background: #2D2D2D;
-  border-color: #505050;
+  background: #0A0A0A;
+  border-color: #006600;
 }
 body.theme-dark .site-nav {
-  border-top-color: #505050;
-  border-bottom-color: #505050;
+  border-top-color: #006600;
+  border-bottom-color: #006600;
 }
 body.theme-dark .site-footer {
-  border-top-color: #505050;
+  border-top-color: #006600;
 }
 body.theme-dark .rule-thin,
 body.theme-dark .rule-double,
 body.theme-dark hr {
-  border-color: #505050;
+  border-color: #006600;
 }
 body.theme-dark .office-card {
-  background: #2D2D2D;
-  border-color: #505050;
+  background: #0A0A0A;
+  border-color: #006600;
 }
 body.theme-dark .org-card {
-  background: #2D2D2D;
-  border-color: #505050;
+  background: #0A0A0A;
+  border-color: #006600;
 }
 body.theme-dark .nav-inner a:hover,
 body.theme-dark .nav-inner a.active {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 
 /* ============================================================
@@ -339,19 +333,18 @@ body.theme-dark .status-badge.needs-info {
 }
 
 .review-btn {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
+  font-family: Arial, 'SimHei', sans-serif;
   font-size: 12px;
   padding: 4px 12px;
-  background: #ECE9D8;
+  background: #D4D0C8;
   color: #000000;
-  border: 2px outset #F0F0F0;
+  border: 2px outset #DDDDDD;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 3px;
 }
 
 .review-btn:hover {
-  background: #F0EDE4;
+  background: #E0DCD4;
 }
 
 .review-btn:active {
@@ -359,13 +352,13 @@ body.theme-dark .status-badge.needs-info {
 }
 
 body.theme-dark .review-btn {
-  background: #3A3A3A;
-  color: #E0E0E0;
-  border: 2px outset #555555;
+  background: #003300;
+  color: #00FF00;
+  border: 2px outset #006600;
 }
 
 body.theme-dark .review-btn:hover {
-  background: #484848;
+  background: #004400;
 }
 
 body.theme-dark .review-btn:active {
@@ -373,7 +366,7 @@ body.theme-dark .review-btn:active {
 }
 
 body.theme-dark .submission-table thead th {
-  color: #B0B0B0;
+  color: var(--ink-muted);
 }
 
 /* ============================================================
@@ -397,17 +390,17 @@ body {
   font-size: 1rem;
   line-height: var(--lh-base);
   color: var(--ink);
-  background-color: #ECE9D8;
-  background-image: url("data:image/svg+xml,%3Csvg width='2' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' fill='%23D4D0C8'/%3E%3C/svg%3E");
+  background-color: #FFFFFF;
+  background-image: none;
 }
 
-/* 全局链接——XP 经典蓝色下划线 */
+/* 全局链接——2000年代经典蓝色下划线 */
 a {
-  color: #0033CC;
+  color: #0000CC;
   text-decoration: underline;
 }
 a:hover {
-  color: #0054E3;
+  color: #0000FF;
   text-decoration: underline;
 }
 a:visited {
@@ -427,10 +420,7 @@ a:visited {
 .page-wrapper {
   background: var(--paper);
   max-width: var(--max-width);
-  margin: 12px auto 0;
-  border: 2px solid #0054E3;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+  margin: 0 auto;
 }
 
 .main-grid {
@@ -446,26 +436,24 @@ a:visited {
 
 .sidebar {
   padding: 28px 20px 40px;
-  background: #ECE9D8;
-  border-left: 1px solid #B0C4DE;
+  background: var(--paper-dark);
 }
 
 /* ============================================================
    Header — 报头
    ============================================================ */
 .site-header {
-  padding: 18px var(--gutter) 14px;
+  padding: 20px var(--gutter) 12px;
   text-align: center;
-  border-bottom: 2px solid #003BB3;
-  background: linear-gradient(180deg, #3399FF 0%, #0054E3 6%, #0054E3 92%, #003BB3 100%);
-  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
 }
 
 .header-overline {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.35em;
-  color: #C8DCF0;
+  color: var(--ink-muted);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -474,11 +462,10 @@ a:visited {
   font-family: var(--font-cn);
   font-size: var(--fs-3xl);
   font-weight: 900;
-  color: #FFFFFF;
+  color: var(--ink-deep);
   letter-spacing: 0.08em;
   line-height: 1.15;
   margin-bottom: 2px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
 .site-title-en {
@@ -486,7 +473,7 @@ a:visited {
   font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0.22em;
-  color: #C8DCF0;
+  color: var(--ink-muted);
   text-transform: uppercase;
 }
 
@@ -494,26 +481,26 @@ a:visited {
   width: 60%;
   max-width: 400px;
   height: 1px;
-  background: rgba(255,255,255,0.35);
+  background: var(--border);
   margin: 10px auto;
 }
 
 .header-motto {
   font-family: var(--font-cn);
   font-size: 0.85rem;
-  color: #E8F0F8;
+  color: var(--ink-muted);
   letter-spacing: 0.15em;
   margin-bottom: 4px;
 }
 .header-motto .sep {
-  color: rgba(255,255,255,0.5);
+  color: var(--border-ink);
   margin: 0 8px;
 }
 
 .header-established {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: #C8DCF0;
+  color: var(--ink-muted);
   letter-spacing: 0.1em;
 }
 
@@ -521,8 +508,8 @@ a:visited {
    Navigation — 导航
    ============================================================ */
 .site-nav {
-  background: linear-gradient(180deg, #FFFFFF 0%, #ECE9D8 100%);
-  border-bottom: 1px solid #7F9DB9;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
   padding: 0 var(--gutter);
 }
 
@@ -538,26 +525,23 @@ a:visited {
 .nav-inner li a {
   display: block;
   padding: 10px 18px;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
+  font-family: Arial, 'SimHei', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #0033CC;
+  color: var(--ink);
   letter-spacing: 0.04em;
   border-bottom: 2px solid transparent;
-  text-decoration: none;
 }
 .nav-inner li a:hover,
 .nav-inner li a.active {
-  color: #FFFFFF;
-  background: #0054E3;
-  border-bottom-color: #003BB3;
-  text-decoration: none;
+  color: #0000CC;
+  border-bottom-color: #0000CC;
 }
 
 .nav-sep {
   display: flex;
   align-items: center;
-  color: #7F9DB9;
+  color: var(--border);
   font-size: 0.5rem;
 }
 
@@ -661,14 +645,14 @@ a:visited {
    Cards & Sections
    ============================================================ */
 .section-header {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 0.9rem;
+  font-family: var(--font-cn);
+  font-size: 1rem;
   font-weight: 700;
-  color: #003BB3;
+  color: var(--ink-deep);
   letter-spacing: 0.04em;
   padding-bottom: 6px;
   margin-bottom: 14px;
-  border-bottom: 1px solid #7F9DB9;
+  border-bottom: 1px solid var(--border-dark);
 }
 
 /* 头条卡片 */
@@ -761,15 +745,14 @@ a:visited {
 }
 
 .sidebar .sidebar-section h4 {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 0.8rem;
+  font-family: var(--font-cn);
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #003BB3;
+  letter-spacing: 0.08em;
+  color: var(--ink-deep);
   margin-bottom: 10px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #7F9DB9;
-  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
 }
 
 .sidebar .sidebar-section ul {
@@ -803,7 +786,6 @@ a:visited {
   border: 1px solid var(--archive-border);
   padding: 18px;
   text-align: center;
-  border-radius: 4px;
 }
 .sidebar-cta h4 {
   border-bottom: none !important;
@@ -817,30 +799,27 @@ a:visited {
 }
 .sidebar-cta .cta-link {
   display: inline-block;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
+  font-family: Arial, 'SimHei', sans-serif;
   font-size: 12px;
   color: #000000;
-  background: #ECE9D8;
-  border: 2px outset #F0F0F0;
+  background: #D4D0C8;
+  border: 2px outset #DDDDDD;
   padding: 4px 16px;
-  border-radius: 3px;
-  text-decoration: none;
 }
 .sidebar-cta .cta-link:hover {
-  background: #F0EDE4;
+  background: #E0DCD4;
   text-decoration: none;
 }
 .sidebar-cta .cta-link:active {
   border-style: inset;
-  background: #D4D0C8;
 }
 
 /* ============================================================
    Footer
    ============================================================ */
 .site-footer {
-  background: linear-gradient(180deg, #D4D0C8 0%, #C0C0C0 100%);
-  border-top: 2px solid #7F9DB9;
+  background: var(--paper);
+  border-top: 1px solid var(--border);
   padding: 20px var(--gutter);
   text-align: center;
 }
@@ -906,8 +885,8 @@ a:visited {
 }
 .listing-filters .filter-tag:hover,
 .listing-filters .filter-tag.active {
-  color: #0033CC;
-  border-bottom-color: #0054E3;
+  color: #0000CC;
+  border-bottom-color: #0000CC;
 }
 
 /* ============================================================
@@ -938,21 +917,19 @@ a:visited {
 }
 
 .archive-search button {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 12px;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 13px;
   padding: 5px 16px;
-  background: #ECE9D8;
+  background: #D4D0C8;
   color: #000000;
-  border: 2px outset #F0F0F0;
+  border: 2px outset #DDDDDD;
   cursor: pointer;
-  border-radius: 3px;
 }
 .archive-search button:hover {
-  background: #F0EDE4;
+  background: #E0DCD4;
 }
 .archive-search button:active {
   border-style: inset;
-  background: #D4D0C8;
 }
 
 .archive-table {
@@ -1109,18 +1086,18 @@ a:visited {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 12px;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 13px;
   padding: 4px 8px;
   background: #FFFFFF;
-  border: 2px inset #D4D0C8;
+  border: 2px inset #DDDDDD;
   color: #000000;
   outline: none;
 }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #7F9DB9;
+  border-color: #999999;
 }
 
 .form-group textarea {
@@ -1147,21 +1124,19 @@ a:visited {
 }
 
 .form-submit {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 12px;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 13px;
   padding: 5px 24px;
-  background: #ECE9D8;
+  background: #D4D0C8;
   color: #000000;
-  border: 2px outset #F0F0F0;
+  border: 2px outset #DDDDDD;
   cursor: pointer;
-  border-radius: 3px;
 }
 .form-submit:hover {
-  background: #F0EDE4;
+  background: #E0DCD4;
 }
 .form-submit:active {
   border-style: inset;
-  background: #D4D0C8;
 }
 
 .form-feedback {
@@ -1472,21 +1447,16 @@ a:visited {
   position: absolute;
   top: 16px;
   right: 24px;
-  font-family: Tahoma, Arial, sans-serif;
-  font-size: 0.72rem;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
   cursor: pointer;
   text-decoration: none;
-  background: rgba(255,255,255,0.15);
-  padding: 3px 12px;
-  border: 1px outset rgba(255,255,255,0.3);
-  border-radius: 3px;
 }
 .header-login-link:hover {
-  color: #FFFFFF;
-  background: rgba(255,255,255,0.25);
-  text-decoration: none;
+  color: #0000CC;
+  text-decoration: underline;
 }
 
 /* ============================================================
@@ -1508,74 +1478,69 @@ a:visited {
 
 .login-modal {
   position: relative;
-  background: #ECE9D8;
-  border: 2px outset #F0F0F0;
+  background: #D4D0C8;
+  border: 2px outset #DDDDDD;
   max-width: 360px;
   width: 90%;
   padding: 24px 20px;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 4px 4px 16px rgba(0,0,0,0.3);
 }
 
 .login-modal-title {
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 0.9rem;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #000000;
   text-align: center;
-  margin: -24px -20px 16px;
-  padding: 8px 20px;
-  background: linear-gradient(180deg, #3399FF 0%, #0054E3 5%, #0054E3 92%, #003BB3 100%);
-  border-radius: 6px 6px 0 0;
-  border-bottom: 1px solid #003BB3;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #999999;
 }
 
 .login-modal-close {
   position: absolute;
-  top: 4px;
-  right: 8px;
-  font-size: 0.9rem;
-  color: #FFFFFF;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;
+  color: #000000;
   cursor: pointer;
-  background: rgba(255,255,255,0.15);
-  border: 1px outset rgba(255,255,255,0.3);
-  padding: 0 5px;
-  line-height: 1.3;
-  border-radius: 2px;
+  background: #D4D0C8;
+  border: 2px outset #DDDDDD;
+  padding: 0 4px;
+  line-height: 1.2;
 }
 .login-modal-close:hover {
-  background: rgba(255,255,255,0.3);
+  background: #E0DCD4;
 }
 .login-modal-close:active {
   border-style: inset;
 }
 
 .login-modal .form-group {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .login-modal .form-group label {
   display: block;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 0.78rem;
+  font-family: var(--font-cn);
+  font-size: 0.82rem;
   font-weight: 700;
-  color: #000000;
+  color: var(--ink);
   letter-spacing: 0.04em;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .login-modal .form-group input {
   width: 100%;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 12px;
-  padding: 5px 8px;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 13px;
+  padding: 4px 8px;
   background: #FFFFFF;
-  border: 2px inset #D4D0C8;
+  border: 2px inset #DDDDDD;
   color: #000000;
   outline: none;
 }
 .login-modal .form-group input:focus {
-  border-color: #7F9DB9;
+  border-color: #999999;
 }
 .login-modal .form-group input::placeholder {
   color: #999999;
@@ -1584,22 +1549,20 @@ a:visited {
 
 .login-modal .login-submit {
   width: 100%;
-  font-family: Tahoma, Arial, 'SimHei', sans-serif;
-  font-size: 12px;
+  font-family: Arial, 'SimHei', sans-serif;
+  font-size: 13px;
   padding: 6px;
-  background: #ECE9D8;
+  background: #D4D0C8;
   color: #000000;
-  border: 2px outset #F0F0F0;
+  border: 2px outset #DDDDDD;
   cursor: pointer;
   margin-top: 8px;
-  border-radius: 3px;
 }
 .login-modal .login-submit:hover {
-  background: #F0EDE4;
+  background: #E0DCD4;
 }
 .login-modal .login-submit:active {
   border-style: inset;
-  background: #D4D0C8;
 }
 
 .login-modal .login-feedback {
@@ -1650,13 +1613,13 @@ body.theme-dark .login-modal .login-feedback.success {
 }
 
 /* ============================================================
-   XP Dark Theme — 内部安全终端暗色元素
+   Terminal Theme — 里网站专属 CRT 终端元素
    ============================================================ */
 
-/* 内部欢迎区光标（保留闪烁效果，改为 XP 蓝） */
+/* 闪烁光标：欢迎标题后 */
 body.theme-dark .internal-welcome h2::after {
   content: '_';
-  color: #6BB5FF;
+  color: #00FF00;
   animation: terminal-blink 1s step-end infinite;
 }
 
@@ -1665,175 +1628,180 @@ body.theme-dark .internal-welcome h2::after {
   50%      { opacity: 0; }
 }
 
-/* 状态卡片 */
+/* 状态卡片 —— 等宽大写 ASCII 风格 */
 body.theme-dark .status-card {
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: 'Courier New', '宋体', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-/* 状态 badge */
+/* 状态 badge 终端化 */
 body.theme-dark .status-badge {
-  border: 1px solid #606060;
-  color: #D0D0D0;
+  font-family: 'Courier New', monospace;
+  border: 1px solid #00FF00;
+  color: #00FF00;
 }
 body.theme-dark .status-badge.pending {
-  border-color: #C08040;
-  color: #C08040;
+  border-color: #33FF33;
+  color: #33FF33;
 }
 body.theme-dark .status-badge.published {
-  border-color: #5A8A5A;
-  color: #80C080;
+  border-color: #00FF00;
+  color: #00FF00;
 }
 body.theme-dark .status-badge.needs-info {
-  border-color: #8A6A6A;
-  color: #C0A0A0;
+  border-color: #00CC00;
+  color: #00CC00;
 }
 
-/* tone-tag */
+/* tone-tag 终端化 */
 body.theme-dark .tone-tag {
-  border-color: #505050;
-  color: #B0B0B0;
+  border-color: #006600;
+  color: #00CC00;
+  font-family: 'Courier New', monospace;
 }
 
-/* 表格行 */
+/* 终端风格表格行 */
 body.theme-dark .submission-table thead th {
-  color: #B0B0B0;
-  border-bottom-color: #505050;
+  color: #00FF00;
+  border-bottom-color: #006600;
 }
 body.theme-dark .submission-table tbody td {
-  border-bottom-color: #3A3A3A;
+  border-bottom-color: #004400;
 }
 body.theme-dark .submission-table .sub-number {
-  color: #808080;
+  color: #00AA00;
 }
 body.theme-dark .submission-table .sub-title a {
-  color: #B0B0B0;
+  color: #00FF00;
 }
 body.theme-dark .submission-table .sub-title a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 
-/* 分页 */
+/* 终端风格分页 */
 body.theme-dark .pagination a,
 body.theme-dark .pagination span {
-  color: #B0B0B0;
-  border-color: #505050;
-  background: #2D2D2D;
+  color: #00CC00;
+  border-color: #006600;
+  background: #000000;
+  font-family: 'Courier New', monospace;
 }
 body.theme-dark .pagination a:hover,
 body.theme-dark .pagination span.current {
-  background: #505050;
-  color: #E0E0E0;
-  border-color: #707070;
+  background: #003300;
+  color: #00FF00;
+  border-color: #00FF00;
 }
 
-/* img-placeholder */
+/* 终端风格 img-placeholder */
 body.theme-dark .img-placeholder {
-  background: #333333;
-  border-color: #505050;
+  background: #0A0A0A;
+  border-color: #006600;
 }
 
-/* img-caption */
+/* 终端风格 img-caption */
 body.theme-dark .img-caption {
-  border-bottom-color: #505050;
-  color: #808080;
+  border-bottom-color: #006600;
+  color: #00AA00;
 }
 
-/* 登录模态窗 */
+/* 终端风格登录模态窗 */
 body.theme-dark .login-modal {
-  background: #2D2D2D;
-  border: 2px outset #555555;
+  background: #000000;
+  border: 2px outset #006600;
 }
 body.theme-dark .login-modal-title {
-  color: #E0E0E0;
-  border-bottom-color: #505050;
-  background: linear-gradient(180deg, #505050 0%, #3A3A3A 8%, #3A3A3A 92%, #2A2A2A 100%);
+  color: #00FF00;
+  border-bottom-color: #006600;
+  font-family: 'Courier New', monospace;
 }
 body.theme-dark .login-modal-close {
-  background: #3A3A3A;
-  color: #E0E0E0;
-  border: 2px outset #555555;
+  background: #000000;
+  color: #00FF00;
+  border: 2px outset #006600;
 }
 body.theme-dark .login-modal-close:hover {
-  background: #505050;
+  background: #003300;
 }
 body.theme-dark .login-overlay {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.85);
 }
 
-/* content-area 和 sidebar 边框 */
+/* 终端样式 content-area 和 sidebar 边框 */
 body.theme-dark .content-area {
-  border-right-color: #505050;
+  border-right-color: #006600;
 }
 body.theme-dark .sidebar {
-  border-top-color: #505050;
+  border-top-color: #006600;
 }
 
-/* submission-tabs */
+/* 终端 submission-tabs */
 body.theme-dark .submission-tab.active {
-  color: #6BB5FF;
-  border-bottom-color: #6BB5FF;
+  color: #00FF00;
+  border-bottom-color: #00FF00;
 }
 body.theme-dark .submission-tab:hover {
-  color: #8AB4F8;
+  color: #33FF33;
 }
 
-/* article list item 标题链接 */
+/* 终端内 article list item 标题链接 */
 body.theme-dark .article-list-item .item-title a {
-  color: #E0E0E0;
+  color: #00FF00;
 }
 body.theme-dark .article-list-item .item-title a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 body.theme-dark .article-list-item .item-category {
-  color: #8AB4F8;
+  color: #00CC00;
 }
 body.theme-dark .featured-story .story-title a {
-  color: #E0E0E0;
+  color: #00FF00;
 }
 body.theme-dark .featured-story .story-title a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 body.theme-dark .ref-title a {
-  color: #E0E0E0;
+  color: #00FF00;
 }
 body.theme-dark .ref-title a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 
-/* listing-filters */
+/* 终端 listing-filters */
 body.theme-dark .listing-filters .filter-tag:hover,
 body.theme-dark .listing-filters .filter-tag.active {
-  color: #6BB5FF;
-  border-bottom-color: #6BB5FF;
+  color: #00FF00;
+  border-bottom-color: #00FF00;
 }
 
-/* sidebar-cta */
+/* 终端 sidebar-cta */
 body.theme-dark .sidebar-cta .cta-link {
-  background: #3A3A3A;
-  color: #E0E0E0;
-  border: 2px outset #555555;
+  background: #003300;
+  color: #00FF00;
+  border: 2px outset #006600;
 }
 body.theme-dark .sidebar-cta .cta-link:hover {
-  background: #484848;
+  background: #004400;
 }
 body.theme-dark .sidebar-cta .cta-link:active {
   border-style: inset;
 }
 
-/* sidebar 链接 */
+/* 终端 sidebar 链接 */
 body.theme-dark .sidebar .sidebar-section ul li a {
-  color: #B0B0B0;
+  color: #00CC00;
 }
 body.theme-dark .sidebar .sidebar-section ul li a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 
-/* footer 链接 */
+/* 终端 footer 链接 */
 body.theme-dark .footer-links a {
-  color: #B0B0B0;
+  color: #00CC00;
 }
 body.theme-dark .footer-links a:hover {
-  color: #6BB5FF;
+  color: #33FF33;
 }
 
 /* ==============================================
@@ -1846,10 +1814,10 @@ body.theme-dark .footer-links a:hover {
   transform: translateX(-50%);
   z-index: 9999;
   padding: 10px 24px;
-  background: #2D2D2D;
-  color: #E0E0E0;
-  border: 1px solid #505050;
-  font-family: Tahoma, Arial, sans-serif;
+  background: #000000;
+  color: #00CC00;
+  border: 1px solid #006600;
+  font-family: 'Courier New', '宋体', monospace;
   font-size: 0.9rem;
   opacity: 1;
   transition: opacity 0.4s;
