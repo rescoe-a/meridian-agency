@@ -6,12 +6,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ============================================================
-     页脚年份自动更新
+     页脚年份 — 固定为 1881–2002（经纬报社运营时期）
      ============================================================ */
-  var yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
 
   /* ============================================================
      投稿表单——模拟提交（不真实发送数据）
